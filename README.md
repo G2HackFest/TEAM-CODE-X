@@ -1,4 +1,4 @@
-AIDOCSUMMARIZATION
+
 AIDOCSUMMARIZATION is a mobile application built using React Native that provides a secure and user-friendly login and authentication system. The app leverages Firebase Authentication to ensure robust security and scalability. Designed with a clean and modern UI, it offers a seamless experience for users to log in, register, and access personalized content.
 
 Project Overview
