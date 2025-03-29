@@ -9,6 +9,7 @@ import {
   KeyboardAvoidingView,
   Platform,
   StatusBar,
+  Image, // Import Image component
 } from 'react-native';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../services/firebaseConfig';
@@ -41,6 +42,16 @@ export default function LoginScreen({ navigation }) {
         behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
         style={styles.innerContainer}
       >
+        {/* Add the logo and text */}
+        <View style={styles.logoContainer}>
+          <Image
+            source={require('../../assets/images/logo.jpg')} // Path to the logo
+            style={styles.logo}
+            resizeMode="contain"
+          />
+          <Text style={styles.productText}>A CodeX Product</Text>
+        </View>
+
         <View style={styles.headerContainer}>
           <Text style={styles.title}>Welcome Back</Text>
           <Text style={styles.subtitle}>Sign in to continue</Text>
@@ -101,6 +112,20 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 24,
     justifyContent: 'center',
+  },
+  logoContainer: {
+    alignItems: 'center',
+    marginBottom: 40, // Adjust spacing as needed
+  },
+  logo: {
+    width: 150, // Adjust width as needed
+    height: 150, // Adjust height as needed
+  },
+  productText: {
+    marginTop: 8,
+    fontSize: 16,
+    color: '#808080',
+    fontWeight: '500',
   },
   headerContainer: {
     marginBottom: 40,
