@@ -13,7 +13,11 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSPhotoLibraryUsageDescription": "Allow $(PRODUCT_NAME) to access your photos to let you choose a profile picture",
+        "NSCameraUsageDescription": "Allow $(PRODUCT_NAME) to access your camera to take profile pictures"
+      }
     },
     "android": {
       "adaptiveIcon": {
@@ -23,6 +27,25 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      
+      [
+        "expo-file-system",
+        {
+          "ios": {
+            "usesIcloudStorage": true
+          }
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "The app needs access to your photos to set your profile picture.",
+          "cameraPermission": "The app needs access to your camera to take profile pictures."
+        }
+      ]
+     
+    ]
   }
 }
